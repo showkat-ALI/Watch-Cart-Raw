@@ -16,12 +16,9 @@
 </head>
 
 <body>
-    <div class="m-0 p-0 ">
 
-        <!-- Your HTML content -->
 
-        <!-- Link to JavaScript file -->
-        <!-- <script src="script.js"></script> -->
+    <div>
 
 
         <div
@@ -98,82 +95,55 @@
                                     <!-- Size options will be dynamically inserted here -->
                                 </div>
                             </fieldset>
-                            <div id="counter">
-                                <div class="flex items-center space-x-3">
-                                    <button type="button" onclick="decreaseQuantity()"
-                                        class="px-2 py-1 bg-gray-200 rounded">-</button>
-                                    <span id="quantity" class="text-lg">0</span>
-                                    <button type="button" onclick="increaseQuantity()"
-                                        class="px-2 py-1 bg-gray-200 rounded">+</button>
-                                </div>
-                            </div>
+
 
                 </div>
-                <button type="button" onclick="addToCart()"
-                    class="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add
-                    to bag</button>
+                <div class="flex flex-row items-center justify-center">
+                    <div id="counter">
+                        <div class="flex items-center space-x-3">
+                            <button type="button" onclick="decreaseQuantity()"
+                                class="px-2 py-1 bg-gray-200 rounded">-</button>
+                            <span id="quantity" class="text-lg">0</span>
+                            <button type="button" onclick="increaseQuantity()"
+                                class="px-2 py-1 bg-gray-200 rounded">+</button>
+                        </div>
+                    </div>
+                    <button id="addToBag" type="button" onclick="addToCart()"
+                        class="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add
+                        to bag</button>
+                </div>
+
                 </form>
                 </section>
 
             </div>
         </div>
-    </div>
 
 
 
-    </div>
-    <button id="openModal"
-        class="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-        <p id="cartItems"></p>
-    </button>
-
-    <div id="modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
-        <div class="flex items-center justify-center min-h-screen px-4 text-center">
-            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
-                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
-            </div>
-            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-            <div
-                class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                    <div class="sm:flex sm:items-start">
-                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                            <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">Modal Title</h3>
-                            <div class="mt-2">
-                                <p class="text-sm text-gray-500">Your modal content goes here.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                    <button id="closeModal" type="button"
-                        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm">Close</button>
-                </div>
-            </div>
+        <div id="cartItems" class="fixed bottom-0 right-0 m-4 p-4 bg-white shadow-lg rounded-lg"
+            style="display: block; width: 200px; height: auto; padding: 8px 24px; gap: 10px; border-radius: 20px 0px 0px 0px; background-color: #FFBB5A;">
         </div>
-    </div>
+        <div class="fixed bottom-0 right-0 m-4 p-4 bg-white shadow-lg rounded-lg"
+            style=" width: 200px; height: auto; padding: 8px 24px; gap: 10px; border-radius: 20px 0px 0px 0px; background-color: #FFBB5A;">
+            kdjj
+        </div>
 
     </div>
-    <script>
-        const openModalButton = document.getElementById('openModal');
-        const closeModalButton = document.getElementById('closeModal');
-        const modal = document.getElementById('modal');
-
-        openModalButton.addEventListener('click', () => {
-            modal.classList.remove('hidden');
-        });
-
-        closeModalButton.addEventListener('click', () => {
-            modal.classList.add('hidden');
-        });
-    </script>
 
 
 
 
 
 
-    </div>
+
+
+
+
+
+
+
+
     <script>
         let cart = [];
         const products = [
@@ -276,21 +246,6 @@
             }
         }
 
-        function countProductQuantities() {
-            const productCounts = {};
-
-            cart.forEach(item => {
-                const key = `${item.color}-${item.size}`;
-                if (productCounts[key]) {
-                    productCounts[key].quantity += 1;
-                } else {
-                    productCounts[key] = { ...item, quantity: 1 };
-                }
-            });
-
-            return productCounts;
-        }
-
         function showCartItems() {
             const modalContent = document.querySelector('#modal .mt-2');
             modalContent.innerHTML = ''; // Clear the current modal content
@@ -318,35 +273,99 @@
             });
         }
 
-        function updateCartDisplay() {
-            const itemCount = cart.length;
-            const cartItems = document.getElementById('cartItems');
-            cartItems.innerText = `Order: ${itemCount}`;
-        }
-
         function addToCart() {
             const selectedColor = document.querySelector('input[name="color-choice"]:checked');
             const selectedSize = document.querySelector('input[name="size-choice"]:checked');
-            const image = document.getElementById('watchImage').src;
+            const quantity = parseInt(document.getElementById('quantity').innerText);
 
-            if (!selectedColor) {
-                alert('Please select a color.');
+            if (!selectedColor || !selectedSize) {
+                alert('Please select a color and size.');
                 return;
             }
 
-            if (!selectedSize) {
-                alert('Please select a size.');
+            if (quantity <= 0) {
+                alert('Please increment the quantity to add to cart.');
                 return;
             }
 
-            const cartItem = {
-                id: Date.now(),
-                image: image,
-                color: selectedColor.value,
-                size: selectedSize.value
-            };
-            cart.push(cartItem);
-            updateCartDisplay(); // Update the cart display
+            for (let i = 0; i < quantity; i++) {
+                const cartItem = {
+                    id: Date.now(),
+                    image: document.getElementById('watchImage').src,
+                    color: selectedColor.value,
+                    size: selectedSize.value
+                };
+                cart.push(cartItem);
+            }
+
+            updateCartDisplay();
+            document.getElementById('quantity').innerText = 0;
+        }
+
+        function updateCartDisplay() {
+            const itemCount = cart.length;
+            const cartItems = document.getElementById('cartItems');
+            cartItems.innerText = `Order: ${itemCount} - ${itemCount} item(s) added to your cart`;
+            if (itemCount > 0) {
+                cartItems.style.display = 'block';
+            } else {
+                cartItems.style.display = 'none';
+            }
+        }
+
+        document.getElementById('addToBag').addEventListener('click', () => {
+            const cartItems = document.getElementById('cartItems');
+            if (cart.length > 0) {
+                cartItems.style.display = 'block';
+            } else {
+                cartItems.style.display = 'none';
+            }
+        });
+
+        function countProductQuantities() {
+            const productCounts = {};
+
+            cart.forEach(item => {
+                const key = `${item.color}-${item.size}`;
+                if (productCounts[key]) {
+                    productCounts[key].quantity += 1;
+                } else {
+                    productCounts[key] = { ...item, quantity: 1 };
+                }
+            });
+
+            return productCounts;
+        }
+
+        function increaseQuantity() {
+            const selectedColor = document.querySelector('input[name="color-choice"]:checked');
+            const selectedSize = document.querySelector('input[name="size-choice"]:checked');
+
+            if (!selectedColor || !selectedSize) {
+                alert('Please select a color and size.');
+                return;
+            }
+
+            document.getElementById('quantity').innerText = parseInt(document.getElementById('quantity').innerText) + 1;
+        }
+
+        function decreaseQuantity() {
+            const selectedColor = document.querySelector('input[name="color-choice"]:checked');
+            const selectedSize = document.querySelector('input[name="size-choice"]:checked');
+
+            if (!selectedColor || !selectedSize) {
+                alert('Please select a color and size.');
+                return;
+            }
+
+            const quantityElement = document.getElementById('quantity');
+            const currentQuantity = parseInt(quantityElement.innerText);
+
+            if (currentQuantity > 0) {
+                quantityElement.innerText = currentQuantity - 1;
+            } else {
+                alert('Quantity cannot be less than zero.');
+            }
         }
 
         // Show the first item by default
@@ -357,6 +376,9 @@
             showWatchRating(firstProduct.color);
             updateReviewNumber(firstProduct.color);
             document.querySelector(`input[name="color-choice"][value="${firstProduct.color}"]`).checked = true;
+
+            // Hide cartItems if addToBag button is not clicked
+            document.getElementById('cartItems').style.display = 'none';
         });
     </script>
 </body>
