@@ -10,127 +10,290 @@
     <!-- Link to CSS file -->
     <link href="./src/output.css" rel="stylesheet">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
 
 
 </head>
 
-<body>
+<body class="font-roboto">
 
 
-    <div>
+    <div class="min-h-screen min-w-screen overflow-hidden p-[20px] md:p-[50px]">
+        <div class="flex justify-around items-center">
+            <div>
+                <div class="flex md:flex-row flex-col justify-between items-center ">
 
-
-        <div
-            class="relative flex w-full items-center  bg-white px-4 pb-8 pt-14 shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8">
-
-
-            <div class="grid w-full grid-cols-1 items-start gap-x-6 gap-y-8 sm:grid-cols-12 lg:gap-x-8">
-                <img id="watchImage" src="" alt="Two each of gray, white, and black shirts arranged on table."
-                    class="aspect-[2/3] w-full rounded-lg bg-gray-100 object-cover sm:col-span-4 lg:col-span-5">
-                <div class="sm:col-span-8 lg:col-span-7">
-                    <h2 class="text-2xl font-bold text-gray-900 sm:pr-12" id="watchName"></h2>
-
-                    <section aria-labelledby="information-heading" class="mt-2">
-
-
-                        <!-- Reviews -->
-                        <div class="mt-6">
-                            <h4 class="sr-only">Reviews</h4>
-                            <div class="flex items-center">
-                                <div class="flex items-center " id="watchRatting">
-                                    <!-- Active: "text-gray-900", Default: "text-gray-200" -->
-
-
-                                </div>
-
-                                <p id="revNumber" href="#"
-                                    class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500"></p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section aria-labelledby="options-heading" class="mt-10">
-                        <h3 id="options-heading" class="sr-only">Product options</h3>
-
-                        <form id="productForm">
-                            <!-- Colors -->
-                            <fieldset aria-label="Choose a color">
-                                <legend class="text-sm font-medium text-gray-900">Color</legend>
-
-                                <div class="mt-4 flex items-center gap-x-3">
-                                    <!-- Active and Checked: "ring ring-offset-1" -->
-                                    <label aria-label="White"
-                                        class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-gray-400 focus:outline-none">
-                                        <input type="radio" name="color-choice" value="White" class="sr-only">
-                                        <span aria-hidden="true"
-                                            class="size-8 rounded-full border border-black/10 bg-white"></span>
-                                    </label>
-                                    <!-- Active and Checked: "ring ring-offset-1" -->
-                                    <label aria-label="Gray"
-                                        class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-gray-400 focus:outline-none">
-                                        <input type="radio" name="color-choice" value="Gray" class="sr-only">
-                                        <span aria-hidden="true"
-                                            class="size-8 rounded-full border border-black/10 bg-gray-200"></span>
-                                    </label>
-                                    <!-- Active and Checked: "ring ring-offset-1" -->
-                                    <label aria-label="Black"
-                                        class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-gray-900 focus:outline-none">
-                                        <input type="radio" name="color-choice" value="Black" class="sr-only">
-                                        <span aria-hidden="true"
-                                            class="size-8 rounded-full border border-black/10 bg-gray-900"></span>
-                                    </label>
-                                </div>
-                            </fieldset>
-
-                            <!-- Sizes -->
-                            <fieldset class="mt-10" aria-label="Choose a size">
-                                <div class="flex items-center justify-between">
-                                    <div class="text-sm font-medium text-gray-900">Size</div>
-                                    <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Size
-                                        guide</a>
-                                </div>
-
-                                <div class="mt-4 grid grid-cols-4 gap-4" id="sizeOptions">
-                                    <!-- Size options will be dynamically inserted here -->
-                                </div>
-                            </fieldset>
-
-
-                </div>
-                <div class="flex flex-row items-center justify-center">
-                    <div id="counter">
-                        <div class="flex items-center space-x-3">
-                            <button type="button" onclick="decreaseQuantity()"
-                                class="px-2 py-1 bg-gray-200 rounded">-</button>
-                            <span id="quantity" class="text-lg">0</span>
-                            <button type="button" onclick="increaseQuantity()"
-                                class="px-2 py-1 bg-gray-200 rounded">+</button>
-                        </div>
+                    <div class="md:mr-28 mr-[50px]">
+                        <img id="watchImage" src="" alt="Watch image"
+                            class="rounded-lg bg-gray-100 lg:max-w-[630px] lg:max-h-[730px]">
                     </div>
-                    <button id="addToBag" type="button" onclick="addToCart()"
-                        class="mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add
-                        to bag</button>
+                    <div>
+                        <p class="text-2xl font-bold text-[#364A63] text-[40px] sm:pr-12" id="watchName"></p>
+                        <section aria-labelledby="information-heading" class="my-[30px]">
+                            <div class="">
+                                <h4 class="sr-only">Reviews</h4>
+                                <div class="flex items-center">
+                                    <div class="flex items-center" id="watchRatting"></div>
+                                    <p id="revNumber"
+                                        class="ml-3 text-sm font-medium text-[#8091A7] hover:text-indigo-500">
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+                        <p class=""><span class="text-[#8091A7] text-[20px] line-through">$99</span>
+                            <span class="text-[#6576FF] text-[24px] font-[700]">$79</span>
+                        </p>
+                        <p class="my-[30px] text-[#8091A7] text-[18px]" id="watchDescription">
+
+                        </p>
+                        <div class="flex ">
+                            <div class=''>
+                                <p class="text-[#8091A7] text-[14px]">Type</p>
+                                <p class="watchType text-[#364A63] text-[16px] font-bold" id="type"></p>
+                            </div>
+                            <div class=' ml-[20px]'>
+                                <p class="text-[#8091A7] text-[14px]">Model Number</p>
+                                <p class="watchModel text-[#364A63] text-[16px] font-bold" id="modelNumber"></p>
+                            </div>
+
+                        </div>
+
+                        <section aria-labelledby="options-heading" class="mt-10">
+                            <h3 id="options-heading" class="sr-only "></h3>
+                            <form id="productForm">
+                                <fieldset aria-label="Choose a color">
+                                    <legend class=" text-[#364A63] text-[18px] font-bold">Band Color</legend>
+                                    <div class="mt-4 flex items-center gap-x-3">
+                                        <label aria-label="purple"
+                                            class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-[#816BFF] focus:outline-none">
+                                            <input type="radio" name="color-choice" style="cursor: pointer;"
+                                                value="purple" class="sr-only">
+                                            <span aria-hidden="true"
+                                                class="w-[16px] h-[16px] rounded-full border-[#816BFF] bg-[#816BFF]"></span>
+                                        </label>
+                                        <style>
+                                            input[value="purple"]:checked+span {
+                                                border-color: #816BFF;
+                                                border-width: 2px;
+                                                padding: 2px;
+                                                box-shadow: 0 0 0 4px rgba(129, 107, 255, 0.5);
+                                            }
+
+                                            input[value="cyan"]:checked+span {
+                                                border-color: #1FCEC9;
+                                                border-width: 2px;
+                                                padding: 2px;
+                                                box-shadow: 0 0 0 4px rgba(31, 206, 201, 0.5);
+                                            }
+
+                                            input[value="blue"]:checked+span {
+                                                border-color: #4B97D3;
+                                                border-width: 2px;
+                                                padding: 2px;
+                                                box-shadow: 0 0 0 4px rgba(75, 151, 211, 0.5);
+                                            }
+
+                                            input[value="black"]:checked+span {
+                                                border-color: black;
+                                                border-width: 2px;
+                                                padding: 2px;
+                                                box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.5);
+                                            }
+                                        </style>
+                                        <label aria-label="cyan"
+                                            class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-[#1FCEC9] focus:outline-none">
+                                            <input type="radio" name="color-choice" value="cyan" class="sr-only">
+                                            <span aria-hidden="true"
+                                                class="w-[16px] h-[16px] rounded-full border border-[#1FCEC9] bg-[#1FCEC9]"></span>
+                                        </label>
+                                        <label aria-label="blue"
+                                            class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-[#4B97D3] focus:outline-none">
+                                            <input type="radio" name="color-choice" value="blue" class="sr-only">
+                                            <span aria-hidden="true"
+                                                class="w-[16px] h-[16px] rounded-full border border-[#4B97D3] bg-[#4B97D3]"></span>
+                                        </label>
+                                        <label aria-label="black"
+                                            class="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 ring-black focus:outline-none">
+                                            <input type="radio" name="color-choice" value="black" class="sr-only">
+                                            <span aria-hidden="true"
+                                                class="w-[16px] h-[16px] rounded-full border-black bg-black"></span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+                                <fieldset class="mt-10" aria-label="Choose a size">
+                                    <div class="">
+                                        <div class="  text-[#364A63] text-[18px] font-bold">Wrist Size</div>
+
+                                    </div>
+                                    <div class="lg:max-w-[75%]">
+                                        <div class="mt-4 grid grid-cols-4 gap-4" id="sizeOptions"></div>
+                                    </div>
+                                </fieldset>
+                                <div class="flex flex-row items-center  mt-6">
+                                    <div id="counter " class="flex items-start">
+                                        <div class="">
+
+                                            <button
+                                                class="relative  inline-flex items-center px-4 py-2 text-sm font-semibold text-[#8091A7] ring-1 ring-inset ring-[#DBDFEA] hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+                                                type="button" onclick="decreaseQuantity()">
+                                                <svg width="15" height="20" viewBox="0 0 14 2" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M13.1607 1.675H1.03926C0.825977 1.675 0.642318 1.60391 0.488281 1.46172C0.346094 1.30768 0.275 1.12402 0.275 0.910742C0.275 0.70931 0.346094 0.5375 0.488281 0.395312C0.642318 0.241276 0.825977 0.164257 1.03926 0.164257H13.1607C13.374 0.164257 13.5518 0.241276 13.6939 0.395312C13.848 0.5375 13.925 0.70931 13.925 0.910742C13.925 1.12402 13.848 1.30768 13.6939 1.46172C13.5518 1.60391 13.374 1.675 13.1607 1.675Z"
+                                                        fill="#8091A7" />
+                                                </svg>
+
+                                            </button>
+                                        </div>
+                                        <div>
+
+                                            <span id="quantity"
+                                                class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-[#8091A7] ring-1 ring-inset ring-[#DBDFEA] hover:bg-gray-50 focus:z-20 focus:outline-offset-0">
+                                                0</span>
+                                        </div>
+                                        <div>
+                                            <button
+                                                class="relative hidden items-center px-4 py-2 text-sm font-semibold text-[#8091A7] ring-1 ring-inset ring-[#DBDFEA] hover:bg-gray-50 focus:z-20 focus:outline-offset-0 md:inline-flex"
+                                                type="button" onclick="increaseQuantity()">
+                                                <svg width="15" height="20" viewBox="0 0 14 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M13.1607 6.16426C13.374 6.16426 13.5518 6.24128 13.6939 6.39531C13.848 6.5375 13.925 6.70931 13.925 6.91074C13.925 7.12402 13.848 7.30768 13.6939 7.46172C13.5518 7.60391 13.374 7.675 13.1607 7.675H7.86426V12.9893C7.86426 13.1907 7.78724 13.3684 7.6332 13.5225C7.49102 13.6646 7.31328 13.7357 7.1 13.7357C6.88672 13.7357 6.70306 13.6646 6.54902 13.5225C6.40684 13.3684 6.33574 13.1907 6.33574 12.9893V7.675H1.03926C0.825977 7.675 0.642318 7.60391 0.488281 7.46172C0.346094 7.30768 0.275 7.12402 0.275 6.91074C0.275 6.70931 0.346094 6.5375 0.488281 6.39531C0.642318 6.24128 0.825977 6.16426 1.03926 6.16426H6.33574V0.849999C6.33574 0.636718 6.40684 0.458984 6.54902 0.316796C6.70306 0.16276 6.88672 0.0857416 7.1 0.0857416C7.31328 0.0857416 7.49102 0.16276 7.6332 0.316796C7.78724 0.458984 7.86426 0.636718 7.86426 0.849999V6.16426H13.1607Z"
+                                                        fill="#8091A7" />
+                                                </svg>
+
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <button id="addToBag" type="button" onclick="addToCart()"
+                                        class="mx-4 flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add
+                                        to Cart</button>
+                                    <span>
+                                        <svg width="19" height="16" viewBox="0 0 19 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M9.5 15.3729C9.39102 15.3729 9.28809 15.3547 9.19121 15.3184C9.10645 15.2699 9.02773 15.2154 8.95508 15.1549L2.39785 8.59766C1.96191 8.14961 1.6168 7.63496 1.3625 7.05371C1.1082 6.46035 0.981055 5.83066 0.981055 5.16465C0.981055 4.48652 1.1082 3.85684 1.3625 3.27559C1.6168 2.68223 1.96191 2.16758 2.39785 1.73164C2.83379 1.28359 3.34844 0.932422 3.9418 0.678125C4.53516 0.423828 5.16484 0.296679 5.83086 0.296679C6.49687 0.296679 7.12656 0.423828 7.71992 0.678125C8.31328 0.932422 8.82793 1.28359 9.26387 1.73164L9.5 1.96777L9.73613 1.71348C10.1721 1.27754 10.6807 0.932422 11.2619 0.678125C11.8553 0.423828 12.485 0.296679 13.151 0.296679C13.1631 0.296679 13.1691 0.296679 13.1691 0.296679C13.1813 0.296679 13.1873 0.296679 13.1873 0.296679C13.8533 0.296679 14.477 0.423828 15.0582 0.678125C15.6516 0.932422 16.1662 1.28359 16.6021 1.73164C17.0381 2.16758 17.3832 2.68223 17.6375 3.27559C17.8918 3.85684 18.0189 4.48652 18.0189 5.16465C18.0189 5.83066 17.8918 6.46035 17.6375 7.05371C17.3832 7.63496 17.0381 8.14961 16.6021 8.59766L10.0449 15.1549C9.97227 15.2154 9.8875 15.2699 9.79063 15.3184C9.70586 15.3547 9.60898 15.3729 9.5 15.3729ZM5.83086 1.85879C4.92266 1.85879 4.1416 2.17969 3.4877 2.82148C2.8459 3.46328 2.525 4.24434 2.525 5.16465C2.525 5.6127 2.60977 6.04258 2.7793 6.4543C2.96094 6.85391 3.19707 7.19902 3.4877 7.48965L9.5 13.502L15.5123 7.48965C15.8029 7.19902 16.033 6.85391 16.2025 6.4543C16.3842 6.04258 16.475 5.6127 16.475 5.16465C16.475 4.70449 16.3842 4.27461 16.2025 3.875C16.033 3.47539 15.8029 3.12422 15.5123 2.82148C15.2096 2.51875 14.8584 2.28262 14.4588 2.11309C14.0592 1.94355 13.6354 1.85879 13.1873 1.85879C13.1752 1.85879 13.1691 1.85879 13.1691 1.85879C12.709 1.85879 12.2791 1.94355 11.8795 2.11309C11.4799 2.28262 11.1348 2.51875 10.8441 2.82148H10.826L10.0449 3.60254C9.97227 3.6752 9.8875 3.73574 9.79063 3.78418C9.70586 3.82051 9.60898 3.83867 9.5 3.83867C9.39102 3.83867 9.28809 3.82051 9.19121 3.78418C9.10645 3.73574 9.02773 3.6752 8.95508 3.60254L8.17402 2.82148C7.87129 2.51875 7.52012 2.28262 7.12051 2.11309C6.7209 1.94355 6.29102 1.85879 5.83086 1.85879Z"
+                                                fill="#6576FF" />
+                                        </svg>
+
+                                    </span>
+                                </div>
+                            </form>
+                        </section>
+                    </div>
+
                 </div>
 
-                </form>
-                </section>
+
+
 
             </div>
         </div>
+        <div class="flex items-center justify-around ">
 
 
-
-        <div id="cartItems" class="fixed bottom-0 right-0 m-4 p-4 bg-white shadow-lg rounded-lg"
-            style="display: block; width: 200px; height: auto; padding: 8px 24px; gap: 10px; border-radius: 20px 0px 0px 0px; background-color: #FFBB5A;">
+            <div class="text-[#364A63] font-bold" id="cartItems"
+                style="display: none; width: 155px; height:42px ; padding: 8px 24px; gap: 10px; border-radius: 20px 20px; background-color: #FFBB5A; cursor: pointer;"
+                onclick="openModal('modelConfirm'); return false;"> Checkout <span id="cartItemsNumber"
+                    class=" bg-white shadow-lg px-[6px] py-[2px] ml-[5px] rounded-lg "></span>
+            </div>
         </div>
-        <div class="fixed bottom-0 right-0 m-4 p-4 bg-white shadow-lg rounded-lg"
-            style=" width: 200px; height: auto; padding: 8px 24px; gap: 10px; border-radius: 20px 0px 0px 0px; background-color: #FFBB5A;">
-            kdjj
+        <div id="modelConfirm" class="fixed hidden z-50 inset-0 bg-gray-900 bg-opacity-60 overflow-y-auto  px-4">
+            <div class="relative top-40 w-[60%] mx-auto shadow-xl rounded-[20px] p-[44px] bg-white ">
+                <div class="flex ">
+                    <button onclick="closeModal('modelConfirm')" type="button"
+                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex flex-col">
+                    <p class="text-[22px] font-extrabold text-[#364A63]">Your Cart</p>
+                    <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5 ">
+                        <div class="  ">
+                            <div class="overflow-hidden">
+                                <table class="min-w-[100%]">
+                                    <thead class=" border-b">
+                                        <tr>
+                                            <th scope="col" class="text-sm font-light text-[#8091A7] py-4 text-left">
+                                                Item
+                                            </th>
+                                            <th scope="col" class="text-sm font-light text-[#8091A7] py-4 text-left">
+                                                Color
+                                            </th>
+                                            <th scope="col" class="text-sm font-light text-[#8091A7] py-4 text-left">
+                                                Size
+                                            </th>
+                                            <th scope="col" class="text-sm font-light text-[#8091A7] py-4 text-left">
+                                                Qnt
+                                            </th>
+                                            <th scope="col" class="text-sm font-light text-[#8091A7] py-4 text-left">
+                                                Price
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="cartItemsTable">
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-end">
+
+                    <div class="flex justify-items-end items-center  ">
+                        <button type="button"
+                            class="mx-4 flex items-center justify-center rounded-md border border-[#DBDFEA] bg-white px-8 py-3 text-base  text-[#364A63] font-bold hover:bg-slate-300  focus:outline-none focus:ring-2 focus:ring-slate-700 focus:ring-offset-2">
+                            Continue Shopping
+                        </button>
+                        <button type="button"
+                            class="mx-4 flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-bold text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                            Checkout
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
     </div>
+    </div>
 
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block'
+            document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden')
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden');
+        }
+
+        // Close all modals when press ESC
+        document.onkeydown = function (event) {
+            event = event || window.event;
+            if (event.keyCode === 27) {
+                document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden');
+                let modals = document.querySelectorAll('.fixed.hidden');
+                modals.forEach(modal => {
+                    modal.style.display = 'none';
+                });
+            }
+        };
+    </script>
+    <script>
+
+    </script>
 
 
 
@@ -148,39 +311,54 @@
         let cart = [];
         const products = [
             {
-                id: 1, image: './Resource/08e68325fba5508c6b8fb7313baf6521.jfif', name: "watch1", prizing: [
+                id: 1, image: './Resource/purple.jfif', name: "Classy Modern Smart watch", prizing: [
                     { size: "XXS", price: 100, },
                     { size: "XS", price: 200, }, { size: "S", price: 300, }, { size: "M", price: 400 }
                 ],
                 rating: 4,
                 type: "watch",
                 modelNumber: "NXd112455",
-                description: "5 ATM Water Resistant, 1 Year Warranty on Watch Movement, 1 Year Warranty for Battery, 6 Months Warranty on Strap Against Any Manufacturing Defects from the Date of Purchase, Battery Type: CR2032, Battery Life: 12 Months, No. of Batteries: 1, Battery Capacity: 220 mAh, Battery Voltage: 3 V, Battery Charge Time: 3 hrs.",
-                color: "White"
+                description: "1 ATM Water Resistant, 1 Year Warranty on Watch Movement, 1 Year Warranty for Battery, 6 Months Warranty on Strap Against Any Manufacturing Defects from the Date of Purchase",
+                color: "purple"
             },
             {
-                id: 2, image: './Resource/5d8fe7132e356835268edaf8c7686f42.jfif', name: "watch2", prizing: [
+                id: 2, image: './Resource/cyan.jfif ', name: "Supar Classy Modern Smart watch", prizing: [
                     { size: "XXS", price: 100, },
                     { size: "XS", price: 200, }, { size: "S", price: 300, }, { size: "M", price: 400 }
                 ],
                 rating: 5,
                 type: "watch",
                 modelNumber: "NXd112455",
-                description: "5 ATM Water Resistant, 1 Year Warranty on Watch Movement, 1 Year Warranty for Battery, 6 Months Warranty on Strap Against Any Manufacturing Defects from the Date of Purchase, Battery Type: CR2032, Battery Life: 12 Months, No. of Batteries: 1, Battery Capacity: 220 mAh, Battery Voltage: 3 V, Battery Charge Time: 3 hrs.",
-                color: "Gray"
+                description: "2 ATM Water Resistant, 1 Year Warranty on Watch Movement, 1 Year Warranty for Battery, 6 Months Warranty on Strap Against Any Manufacturing Defects from the Date of Purchase.",
+                color: "cyan"
             },
             {
-                id: 3, image: './Resource/6ba4ac91a82300df8837e8cb1806acad.jfif', name: "watch3", prizing: [
+                id: 3, image: './Resource/blue.jfif', name: "Ultra Classy Modern Smart watch", prizing: [
                     { size: "XXS", price: 100, },
                     { size: "XS", price: 200, }, { size: "S", price: 300, }, { size: "M", price: 400 }
                 ],
                 rating: 3,
                 type: "watch",
                 modelNumber: "NXd112455",
-                description: "5 ATM Water Resistant, 1 Year Warranty on Watch Movement, 1 Year Warranty for Battery, 6 Months Warranty on Strap Against Any Manufacturing Defects from the Date of Purchase, Battery Type: CR2032, Battery Life: 12 Months, No. of Batteries: 1, Battery Capacity: 220 mAh, Battery Voltage: 3 V, Battery Charge Time: 3 hrs.",
-                color: "Black"
+                description: " 3 ATM Water Resistant, 1 Year Warranty on Watch Movement, 1 Year Warranty for Battery, 6 Months Warranty on Strap Against Any Manufacturing Defects from the Date of Purchase, Battery Type: CR2032.",
+                color: "blue"
+            },
+            {
+                id: 4, image: './Resource/black.jfif', name: "Western Modern Smart watch", prizing: [
+                    { size: "XXS", price: 100, },
+                    { size: "XS", price: 200, }, { size: "S", price: 300, }, { size: "M", price: 400 }
+                ],
+                rating: 3,
+                type: "watch",
+                modelNumber: "NXd112455",
+                description: " 3 ATM Water Resistant, 1 Year Warranty on Watch Movement, 1 Year Warranty for Battery, 6 Months Warranty on Strap Against Any Manufacturing Defects from the Date of Purchase, Battery Type: CR2032.",
+                color: "black"
             }
         ];
+        document.getElementById('cartItems').addEventListener('click', () => {
+            showCartItems();
+            document.getElementById('modelConfirm').classList.remove('hidden');
+        });
 
         document.querySelectorAll('input[name="color-choice"]').forEach((input) => {
             input.addEventListener('change', (event) => {
@@ -200,21 +378,38 @@
             if (product) {
                 product.prizing.forEach(prize => {
                     const sizeOption = document.createElement('label');
-                    sizeOption.classList.add('relative', 'flex', 'items-center', 'justify-center', 'rounded-md', 'border', 'py-3', 'px-4', 'text-sm', 'font-medium', 'uppercase', 'hover:bg-gray-50', 'focus:outline-none', 'sm:flex-1', 'sm:py-6');
+                    sizeOption.classList.add('relative', 'flex', 'items-center', 'justify-center', 'rounded-md', 'border', 'py-[18px]', 'px-[8px]', 'uppercase', 'hover:bg-gray-50', 'focus:outline-none', 'cursor-pointer');
                     sizeOption.innerHTML = `
-                <input type="radio" name="size-choice" value="${prize.size}" class="sr-only">
-                <span>${prize.size} - $${prize.price}</span>
-                `;
+            <input type="radio" name="size-choice" value="${prize.size}" class="sr-only" style="">
+            <span class="text-[13px]"> <span class="mr-[5px] font-bold size-text" style="color: #364A63;">${prize.size}</span> <span class="text-[#8091A7]">$${prize.price} </span></span>
+            `;
+                    sizeOption.addEventListener('click', () => {
+                        document.querySelectorAll('.size-text').forEach(el => el.style.color = '#364A63');
+                        sizeOption.querySelector('.size-text').style.color = '#6576FF';
+                    });
                     sizeOptionsContainer.appendChild(sizeOption);
                 });
+
+                // Update type and model number
+                document.getElementById('type').innerText = product.type;
+                document.getElementById('modelNumber').innerText = product.modelNumber;
             }
         }
+
+        document.getElementById('addToBag').addEventListener('click', () => {
+            calculateTotalPrice();
+        });
+
+        document.getElementById('cartItems').addEventListener('click', () => {
+            calculateTotalPrice();
+        });
 
         function changeImage(color) {
             const product = products.find(product => product.color === color);
             if (product) {
                 document.getElementById('watchImage').src = product.image;
                 document.getElementById('watchName').innerText = product.name;
+                document.getElementById('watchDescription').innerText = product.description;
             }
         }
 
@@ -227,12 +422,12 @@
                 const rating = Math.min(product.rating, 5); // Limit rating to max 5
                 for (let i = 0; i < 5; i++) {
                     const star = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-                    star.setAttribute('class', `size-5 shrink-0 ${i < rating ? 'text-gray-900' : 'text-gray-200'}`);
-                    star.setAttribute('viewBox', '0 0 20 20');
+                    star.setAttribute('class', `size-5 shrink-0 ${i < rating ? 'text-[#FFD200]' : 'text-gray-200'}`);
+                    star.setAttribute('viewBox', '0 0 18 19');
                     star.setAttribute('fill', 'currentColor');
                     star.setAttribute('aria-hidden', 'true');
                     star.innerHTML = `
-            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd" />
+           <path d="M16.4633 7.75627C16.374 7.48702 16.1438 7.28827 15.8625 7.24627L15.8588 7.24552L11.5845 6.62077L9.67275 2.74777C9.53475 2.51602 9.285 2.36377 9 2.36377C8.715 2.36377 8.466 2.51602 8.3295 2.74402L8.32725 2.74777L6.4155 6.62077L2.14125 7.24552C1.776 7.30027 1.5 7.61152 1.5 7.98802C1.5 8.19877 1.587 8.38852 1.7265 8.52502L4.8195 11.5378L4.08975 15.7925C4.083 15.8308 4.07925 15.8743 4.07925 15.9193C4.07925 16.3333 4.41525 16.6693 4.82925 16.6693C4.95675 16.6693 5.0775 16.637 5.1825 16.5808L5.17875 16.583L9.00075 14.5723L12.8228 16.583C12.924 16.637 13.044 16.6693 13.1723 16.6693C13.5863 16.6693 13.9223 16.3333 13.9223 15.9193C13.9223 15.8743 13.9185 15.8308 13.911 15.788L13.9118 15.7925L13.182 11.5378L16.275 8.52502C16.4145 8.38852 16.5015 8.19877 16.5015 7.98802C16.5015 7.90552 16.488 7.82527 16.4633 7.75102L16.4648 7.75627H16.4633Z" fill="${i < rating ? '#FFD200' : '#E5E7EB'}"/>
             `;
                     watchRatingContainer.appendChild(star);
                 }
@@ -242,35 +437,96 @@
         function updateReviewNumber(color) {
             const product = products.find(product => product.color === color);
             if (product) {
-                document.getElementById('revNumber').innerText = `${product.rating} out of 5 stars`;
+                document.getElementById('revNumber').innerText = `(${product.rating} Reviews )`;
+            }
+        }
+
+
+
+        function removeFromCart(color, size) {
+            cart = cart.filter(item => !(item.color === color && item.size === size));
+            updateCartDisplay();
+            showCartItems();
+            calculateTotalPrice();
+        }
+
+        function removeOneFromCart(color, size) {
+            const itemIndex = cart.findIndex(item => item.color === color && item.size === size);
+            if (itemIndex !== -1) {
+                cart.splice(itemIndex, 1);
+                updateCartDisplay();
+                showCartItems();
+                calculateTotalPrice();
             }
         }
 
         function showCartItems() {
-            const modalContent = document.querySelector('#modal .mt-2');
+            const modalContent = document.getElementById('cartItemsTable');
             modalContent.innerHTML = ''; // Clear the current modal content
 
             const productCounts = countProductQuantities();
+            let totalQuantity = 0;
+            let totalPrice = 0;
 
             Object.values(productCounts).forEach(item => {
-                const itemElement = document.createElement('div');
-                itemElement.classList.add('flex', 'items-start', 'mb-4');
+                const product = products.find(product => product.color === item.color);
+                const price = product.prizing.find(prize => prize.size === item.size).price;
+                const itemTotalPrice = price * item.quantity;
+                totalQuantity += item.quantity;
+                totalPrice += itemTotalPrice;
 
-                const itemImage = document.createElement('img');
-                itemImage.classList.add('w-24', 'h-24', 'rounded-lg', 'mr-4');
-                itemImage.src = item.image;
-                itemImage.alt = `${item.color} shirt`;
-
-                const itemDetails = document.createElement('div');
-                itemDetails.innerHTML = `
-                <p class="text-gray-900">${item.color} - ${item.size}</p>
-                <p class="text-gray-500">Quantity: ${item.quantity}</p>
+                const row = document.createElement('tr');
+                row.classList.add('bg-white', 'border-b', 'transition', 'duration-300', 'text-[#364A63]', 'ease-in-out', 'hover:bg-gray-100');
+                row.innerHTML = `
+                <td class="py-6 whitespace-nowrap font-medium">
+                <div class="flex items-center">
+                    <img src="${item.image}" alt="${item.color}" class="w-[36px] height-[36px] rounded-lg">
+                    <p class="font-thin ml-[5px]">${item.name}</p>
+                </div>
+                </td>
+                <td class="py-6 whitespace-nowrap">${item.color}</td>
+                <td class="font-extrabold py-6 whitespace-nowrap">${item.size}</td>
+                <td class="font-extrabold py-6 whitespace-nowrap">${item.quantity}</td>
+                <td class="font-extrabold py-6 whitespace-nowrap">$${itemTotalPrice}</td>
+                <td>
+                <button onclick="removeOneFromCart('${item.color}', '${item.size}')" class="text-red-500 hover:text-red-700">Remove One</button>
+                </td>
+                <td>
+                <button onclick="removeFromCart('${item.color}', '${item.size}')" class="text-red-500 hover:text-red-700">Remove All</button>
+                </td>
             `;
-
-                itemElement.appendChild(itemImage);
-                itemElement.appendChild(itemDetails);
-                modalContent.appendChild(itemElement);
+                modalContent.appendChild(row);
             });
+
+            const totalRow = document.createElement('tr');
+            totalRow.classList.add('bg-white', 'border-t', 'transition', 'duration-300', 'text-[#364A63]', 'ease-in-out', 'hover:bg-gray-100');
+            totalRow.innerHTML = `
+            <td class="py-6 whitespace-nowrap font-bold" colspan="3">Total</td>
+            <td class="font-extrabold py-6 whitespace-nowrap">${totalQuantity}</td>
+            <td class="font-extrabold py-6 whitespace-nowrap">$${totalPrice.toFixed(2)}</td>
+            <td colspan="2"></td>
+            `;
+            modalContent.appendChild(totalRow);
+
+            calculateTotalPrice();
+        }
+
+        function removeOneFromCart(color, size) {
+            const itemIndex = cart.findIndex(item => item.color === color && item.size === size);
+            if (itemIndex !== -1) {
+                cart.splice(itemIndex, 1);
+                updateCartDisplay();
+                showCartItems();
+                calculateTotalPrice();
+            }
+        }
+
+
+
+        function updateCartDisplay() {
+            const itemCount = cart.length;
+            const cartItems = document.getElementById('cartItemsNumber');
+            cartItems.innerText = ` ${itemCount}`;
         }
 
         function addToCart() {
@@ -288,29 +544,9 @@
                 return;
             }
 
-            for (let i = 0; i < quantity; i++) {
-                const cartItem = {
-                    id: Date.now(),
-                    image: document.getElementById('watchImage').src,
-                    color: selectedColor.value,
-                    size: selectedSize.value
-                };
-                cart.push(cartItem);
-            }
-
             updateCartDisplay();
             document.getElementById('quantity').innerText = 0;
-        }
-
-        function updateCartDisplay() {
-            const itemCount = cart.length;
-            const cartItems = document.getElementById('cartItems');
-            cartItems.innerText = `Order: ${itemCount} - ${itemCount} item(s) added to your cart`;
-            if (itemCount > 0) {
-                cartItems.style.display = 'block';
-            } else {
-                cartItems.style.display = 'none';
-            }
+            console.log(cart); // Show selected cart items in console
         }
 
         document.getElementById('addToBag').addEventListener('click', () => {
@@ -321,6 +557,9 @@
                 cartItems.style.display = 'none';
             }
         });
+
+
+
 
         function countProductQuantities() {
             const productCounts = {};
@@ -347,6 +586,18 @@
             }
 
             document.getElementById('quantity').innerText = parseInt(document.getElementById('quantity').innerText) + 1;
+
+            const cartItem = {
+                id: Date.now(),
+                image: document.getElementById('watchImage').src,
+                name: document.getElementById('watchName').innerText,
+                color: selectedColor.value,
+                size: selectedSize.value,
+                description: selectedSize.value,
+            };
+            cart.push(cartItem);
+            updateCartDisplay();
+            calculateTotalPrice();
         }
 
         function decreaseQuantity() {
@@ -363,10 +614,42 @@
 
             if (currentQuantity > 0) {
                 quantityElement.innerText = currentQuantity - 1;
+
+                const itemIndex = cart.findIndex(item => item.color === selectedColor.value && item.size === selectedSize.value);
+                if (itemIndex !== -1) {
+                    cart.splice(itemIndex, 1);
+                    updateCartDisplay();
+                    calculateTotalPrice();
+                }
             } else {
                 alert('Quantity cannot be less than zero.');
             }
         }
+
+        function calculateTotalPrice() {
+            let totalPrice = 0;
+            let totalQuantity = 0;
+            const productCounts = countProductQuantities();
+
+            Object.values(productCounts).forEach(item => {
+                const product = products.find(product => product.color === item.color);
+                if (product) {
+                    const price = product.prizing.find(prize => prize.size === item.size).price;
+                    totalPrice += price * item.quantity;
+                    totalQuantity += item.quantity;
+                }
+            });
+
+
+        }
+
+        document.getElementById('addToBag').addEventListener('click', () => {
+            calculateTotalPrice();
+        });
+
+        document.getElementById('cartItems').addEventListener('click', () => {
+            calculateTotalPrice();
+        });
 
         // Show the first item by default
         document.addEventListener('DOMContentLoaded', () => {
@@ -376,6 +659,7 @@
             showWatchRating(firstProduct.color);
             updateReviewNumber(firstProduct.color);
             document.querySelector(`input[name="color-choice"][value="${firstProduct.color}"]`).checked = true;
+            document.getElementById('watchDescription').innerText = firstProduct.description;
 
             // Hide cartItems if addToBag button is not clicked
             document.getElementById('cartItems').style.display = 'none';
